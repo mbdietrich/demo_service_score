@@ -20,7 +20,7 @@ server.route(
     method: 'POST'
     path: '/score'
     handler: (request, reply) ->
-      body = JSON.parse( request.payload )
+      body = request.payload
       playername = body.name
       http.request("#{player_uri}/player/#{playername}")
       .then( (response) =>
